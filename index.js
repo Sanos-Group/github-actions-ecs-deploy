@@ -19,6 +19,7 @@ async function deployToECS() {
 
 	// check if taskdefinition build script is available
 	const taskDefPath = path.resolve('taskdefinition.js');
+	console.log(`taskdefinition path: ${taskDefPath}`);
 	if (!fs.existsSync(taskDefPath)) {
 		throw new Error('No "taskdefinition.js" file found in project root');
 	}
