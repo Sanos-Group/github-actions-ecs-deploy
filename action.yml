@@ -23,7 +23,7 @@ inputs:
   taskDefinitionPath:
     description: 'Relative path of task definition js file'
     required: true
-    default: '../../taskdefinition.js'
+    default: '../taskdefinition.js'
 
 runs:
   using: 'node12'

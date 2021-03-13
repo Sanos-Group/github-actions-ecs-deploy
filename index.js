@@ -22,7 +22,7 @@ async function deployToECS() {
 	const taskDefPath = path.resolve(taskDefinitionPath);
 	console.log(`taskdefinition path: ${taskDefPath}`);
 	if (!fs.existsSync(taskDefPath)) {
-		throw new Error('No "taskdefinition.js" file found in project root');
+		throw new Error(`No ${taskDefPath} file found in project root`);
 	}
 
 	// build and push docker image
