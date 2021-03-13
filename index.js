@@ -52,4 +52,8 @@ async function deployToECS() {
 	console.log(JSON.stringify(response));
 };
 
-deployToECS();
+try {
+	deployToECS();
+} catch (error) {
+	core.setFailed(error.message);
+}
