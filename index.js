@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 const { ECS } = require('aws-sdk');
+const exec = require('@actions/exec');
 
 const path = require('path');
 const fs = require('fs');
