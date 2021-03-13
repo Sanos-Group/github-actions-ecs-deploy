@@ -2,7 +2,7 @@ name: 'ECS Deployment'
 description: 'Github action to deploy services to ECS'
 inputs:
   environment:
-    description: 'Stage Environment'
+    description: 'Environment e.g. dev, beta, prod'
     required: true
   version:
     description: 'Docker image version'
