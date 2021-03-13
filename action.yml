@@ -1,13 +1,26 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'ECS Deployment'
+description: 'Github action to deploy services to ECS'
 inputs:
-  who-to-greet: # id of input
-    description: 'Who to greet'
+  environment:
+    description: 'Stage Environment'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  version:
+    description: 'Docker image version'
+    required: true
+  clusterName:
+    description: 'ECS cluster name'
+    required: true
+  serviceName:
+    description: 'Service name'
+    required: true
+  desiredCount:
+    description: 'Number of services to deploy'
+    required: false
+    default: 1
+  ecrRegistry:
+    description: 'ECR registry name'
+    required: true
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
