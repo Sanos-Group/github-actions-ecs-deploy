@@ -23,7 +23,10 @@ inputs:
   taskDefinitionPath:
     description: 'Relative path of task definition js file'
     required: true
-    default: '../taskdefinition.js'
+    default: 'taskdefinition.js'
+  imageName:
+    description: 'Name of docker image'
+    required: true
 
 runs:
   using: 'node12'

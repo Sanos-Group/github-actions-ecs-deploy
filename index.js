@@ -10,6 +10,7 @@ const ecs = new ECS({ region: 'eu-central-1' });
 async function deployToECS() {
 
 	// read input params
+	const imageName = core.getInput('imageName', { 'required': true });
 	const environment = core.getInput('environment', { required: true });
 	const version = core.getInput('version', { required: true });
 	const clusterName = core.getInput('clusterName', { required: true });
@@ -22,7 +23,8 @@ async function deployToECS() {
 	const taskDefPath = path.resolve(taskDefinitionPath);
 	console.log(`taskdefinition path: ${taskDefPath}`);
 	if (!fs.existsSync(taskDefPath)) {
-		throw new Error(`No ${taskDefPath} file found in project root`);
+		console.warn(`No ${taskDefPath} file found in project root`);
+		//throw new Error;
 	}
 
 	// build and push docker image
