@@ -16,9 +16,10 @@ async function deployToECS() {
 	const serviceName = core.getInput('serviceName', { required: true });
 	const desiredCount = core.getInput('desiredCount');
 	const ecrRegistry = core.getInput('ecrRegistry', { required: true });
+	const taskDefinitionPath = core.getInput('taskDefinitionPath', { required: true });
 
 	// check if taskdefinition build script is available
-	const taskDefPath = path.resolve('taskdefinition.js');
+	const taskDefPath = path.resolve(taskDefinitionPath);
 	console.log(`taskdefinition path: ${taskDefPath}`);
 	if (!fs.existsSync(taskDefPath)) {
 		throw new Error('No "taskdefinition.js" file found in project root');

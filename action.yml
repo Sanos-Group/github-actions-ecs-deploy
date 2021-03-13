@@ -20,6 +20,10 @@ inputs:
   ecrRegistry:
     description: 'ECR registry name'
     required: true
+  taskDefinitionPath:
+    description: 'Relative path of task definition js file'
+    required: true
+    default: '../../taskdefinition.js'
 
 runs:
   using: 'node12'
