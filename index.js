@@ -29,7 +29,7 @@ async function deployToECS() {
 	}
 
 	// build and push docker image
-	const ecrRepo = `${ecrRegistry}:${imageName}`;
+	const ecrRepo = `${ecrRegistry}/${imageName}`;
 
 	await exec.exec(`docker build -t ${serviceName} .`);
 	await exec.exec(`docker tag ${serviceName}:latest ${ecrRepo}:${version}`);
